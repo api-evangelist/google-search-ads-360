@@ -1,0 +1,212 @@
+openapi: 3.1.0
+info:
+  title: Google Search Ads 360 Reporting API
+  description: >-
+    The Search Ads 360 Reporting API enables automated report downloading and
+    programmatic access to search advertising campaign data using search and
+    streaming query methods with a SQL-like query language.
+  version: v0
+  contact:
+    name: Google
+    url: https://developers.google.com/search-ads
+  license:
+    name: Google APIs Terms of Service
+    url: https://developers.google.com/terms
+servers:
+  - url: https://searchads360.googleapis.com
+    description: Search Ads 360 Reporting API server
+paths:
+  /v0/customers/{customerId}/searchAds360:search:
+    post:
+      summary: Search campaign data
+      description: >-
+        Returns all rows that match the search query using a SQL-like query
+        language for Search Ads 360 data.
+      operationId: search
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+  /v0/customers/{customerId}/searchAds360:searchStream:
+    post:
+      summary: Stream campaign data
+      description: >-
+        Returns all rows that match the search query as a stream, which is
+        more efficient for large result sets.
+      operationId: searchStream
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SearchStreamResponse'
+  /v0/{resourceName}:
+    get:
+      summary: Get a resource
+      description: Returns the requested resource in full detail.
+      operationId: getResource
+      parameters:
+        - name: resourceName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /v0/customers/{customerId}/customColumns:
+    get:
+      summary: List custom columns
+      description: Lists the custom columns for a specified customer.
+      operationId: listCustomColumns
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListCustomColumnsResponse'
+components:
+  schemas:
+    SearchRequest:
+      type: object
+      properties:
+        query:
+          type: string
+          description: The query string using Search Ads 360 Query Language.
+        pageToken:
+          type: string
+          description: Token for paginating through large result sets.
+        pageSize:
+          type: integer
+          description: Number of elements to retrieve in a single page.
+      required:
+        - query
+    SearchResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchAds360Row'
+        nextPageToken:
+          type: string
+        totalResultsCount:
+          type: string
+        fieldMask:
+          type: string
+    SearchStreamResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchAds360Row'
+        fieldMask:
+          type: string
+        requestId:
+          type: string
+    SearchAds360Row:
+      type: object
+      properties:
+        campaign:
+          type: object
+          properties:
+            resourceName:
+              type: string
+            name:
+              type: string
+            status:
+              type: string
+            id:
+              type: string
+        adGroup:
+          type: object
+          properties:
+            resourceName:
+              type: string
+            name:
+              type: string
+            status:
+              type: string
+        metrics:
+          type: object
+          properties:
+            impressions:
+              type: string
+            clicks:
+              type: string
+            costMicros:
+              type: string
+            conversions:
+              type: number
+    CustomColumn:
+      type: object
+      properties:
+        resourceName:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        valueType:
+          type: string
+    ListCustomColumnsResponse:
+      type: object
+      properties:
+        customColumns:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomColumn'
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/doubleclicksearch: Manage DoubleClick Search data
+security:
+  - oauth2:
+      - https://www.googleapis.com/auth/doubleclicksearch

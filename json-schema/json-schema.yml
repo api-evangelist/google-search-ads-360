@@ -1,0 +1,77 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://raw.githubusercontent.com/api-evangelist/google-search-ads-360/refs/heads/main/json-schema/json-schema.yml
+title: Google Search Ads 360 Reporting API Schema
+description: >-
+  JSON Schema for the Search Ads 360 Reporting API covering search requests,
+  responses, and campaign data rows.
+type: object
+properties:
+  SearchRequest:
+    type: object
+    properties:
+      query:
+        type: string
+        description: The query string using Search Ads 360 Query Language.
+      pageToken:
+        type: string
+        description: Token for pagination.
+      pageSize:
+        type: integer
+        description: Number of results per page.
+    required:
+      - query
+  SearchAds360Row:
+    type: object
+    properties:
+      campaign:
+        type: object
+        properties:
+          resourceName:
+            type: string
+          name:
+            type: string
+          status:
+            type: string
+          id:
+            type: string
+      adGroup:
+        type: object
+        properties:
+          resourceName:
+            type: string
+          name:
+            type: string
+          status:
+            type: string
+      metrics:
+        type: object
+        properties:
+          impressions:
+            type: string
+          clicks:
+            type: string
+          costMicros:
+            type: string
+          conversions:
+            type: number
+  CustomColumn:
+    type: object
+    properties:
+      resourceName:
+        type: string
+        description: The resource name of the custom column.
+      id:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      valueType:
+        type: string
+        enum:
+          - STRING
+          - INT64
+          - DOUBLE
+          - BOOLEAN
+    required:
+      - resourceName

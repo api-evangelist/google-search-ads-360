@@ -1,0 +1,16 @@
+"@context":
+  "@vocab": https://schema.org/
+  sa360: https://developers.google.com/search-ads/reporting/api/reference/rest/v0/
+  name: schema:name
+  description: schema:description
+  url: schema:url
+  resourceName: sa360:resourceName
+  customerId: sa360:customerId
+  campaignId: sa360:campaignId
+  adGroupId: sa360:adGroupId
+  impressions: sa360:impressions
+  clicks: sa360:clicks
+  costMicros: sa360:costMicros
+  conversions: sa360:conversions
+  query: sa360:query
+  status: sa360:status
