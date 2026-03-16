@@ -1,3 +1,4 @@
+aid: google-search-ads-360
 name: Google Search Ads 360 Reporting API
 description: >-
   The Search Ads 360 Reporting API enables automated report downloading and
@@ -7,8 +8,9 @@ description: >-
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-search-ads-360/refs/heads/main/apis.yml
 created: '2026-03-13'
-modified: '2026-03-13'
-specificationVersion: '0.18'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+type: Index
 tags:
   - Search Advertising
   - Reporting
@@ -25,17 +27,37 @@ apis:
     humanURL: https://developers.google.com/search-ads
     baseURL: https://searchads360.googleapis.com
     properties:
+      - type: Documentation
+        url: https://developers.google.com/search-ads/reporting/api/reference
       - type: OpenAPI
         url: openapi/openapi.yml
+      - type: Authentication
+        url: https://developers.google.com/search-ads/reporting/quickstart/quickstart-guide
+      - type: Getting Started
+        url: https://developers.google.com/search-ads/reporting/quickstart/quickstart-guide
       - type: JSONSchema
         url: json-schema/json-schema.yml
       - type: JSONLD
         url: json-ld/json-ld.yml
 common:
-  - type: GettingStarted
+  - type: Portal
+    url: https://developers.google.com/search-ads
+  - type: Getting Started
+    url: https://developers.google.com/search-ads/reporting/quickstart/quickstart-guide
+  - type: Documentation
+    url: https://developers.google.com/search-ads
+  - type: Authentication
     url: https://developers.google.com/search-ads/reporting/quickstart/quickstart-guide
   - type: Pricing
     url: https://marketingplatform.google.com/about/search-ads-360/
+  - type: Terms of Service
+    url: https://developers.google.com/terms
+  - type: Privacy Policy
+    url: https://policies.google.com/privacy
+  - type: Status
+    url: https://status.cloud.google.com/
+  - type: Support
+    url: https://developers.google.com/search-ads/reporting/support
   - type: JSONLD
     url: json-ld/json-ld.yml
 maintainers:
