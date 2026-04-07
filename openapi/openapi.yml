@@ -41,6 +41,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SearchResponse'
+      tags:
+        - Customers
   /v0/customers/{customerId}/searchAds360:searchStream:
     post:
       summary: Google Search Ads 360 Reporting Stream campaign data
@@ -68,6 +70,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/SearchStreamResponse'
+      tags:
+        - Customers
   /v0/{resourceName}:
     get:
       summary: Google Search Ads 360 Reporting Get a resource
@@ -104,6 +108,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListCustomColumnsResponse'
+      tags:
+        - Customers
 components:
   schemas:
     SearchRequest:
@@ -210,3 +216,5 @@ components:
 security:
   - oauth2:
       - https://www.googleapis.com/auth/doubleclicksearch
+tags:
+  - name: Customers

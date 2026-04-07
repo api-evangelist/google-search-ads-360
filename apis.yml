@@ -12,12 +12,12 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 type: Index
 tags:
-  - Search Advertising
-  - Reporting
   - Campaign Management
-  - Keywords
   - Conversions
+  - Keywords
+  - Reporting
   - Search Ads 360
+  - Search Advertising
 apis:
   - name: Google Search Ads 360 Reporting API
     description: >-
