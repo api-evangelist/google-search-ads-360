@@ -18,7 +18,7 @@ servers:
 paths:
   /v0/customers/{customerId}/searchAds360:search:
     post:
-      summary: Search campaign data
+      summary: Google Search Ads 360 Reporting Search campaign data
       description: >-
         Returns all rows that match the search query using a SQL-like query
         language for Search Ads 360 data.
@@ -43,7 +43,7 @@ paths:
                 $ref: '#/components/schemas/SearchResponse'
   /v0/customers/{customerId}/searchAds360:searchStream:
     post:
-      summary: Stream campaign data
+      summary: Google Search Ads 360 Reporting Stream campaign data
       description: >-
         Returns all rows that match the search query as a stream, which is
         more efficient for large result sets.
@@ -70,7 +70,7 @@ paths:
                   $ref: '#/components/schemas/SearchStreamResponse'
   /v0/{resourceName}:
     get:
-      summary: Get a resource
+      summary: Google Search Ads 360 Reporting Get a resource
       description: Returns the requested resource in full detail.
       operationId: getResource
       parameters:
@@ -88,7 +88,7 @@ paths:
                 type: object
   /v0/customers/{customerId}/customColumns:
     get:
-      summary: List custom columns
+      summary: Google Search Ads 360 Reporting List custom columns
       description: Lists the custom columns for a specified customer.
       operationId: listCustomColumns
       parameters:
