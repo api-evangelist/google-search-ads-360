@@ -1,0 +1,219 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Search Ads 360 Reporting API
+  description: The Search Ads 360 Reporting API enables automated report downloading and programmatic access to search advertising
+    campaign data using search and streaming query methods with a SQL-like query language.
+  tags:
+  - Google
+  - Search
+  - Ads
+  - '360'
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: google-search-ads-360
+    baseUri: https://searchads360.googleapis.com
+    description: Google Search Ads 360 Reporting API HTTP API.
+    authentication:
+      type: bearer
+      token: '{{GOOGLE_SEARCH_ADS_360_TOKEN}}'
+    resources:
+    - name: v0-customers-customerid-searchads360-search
+      path: /v0/customers/{customerId}/searchAds360:search
+      operations:
+      - name: search
+        method: POST
+        description: Google Search Ads 360 Reporting Search campaign data
+        inputParameters:
+        - name: customerId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v0-customers-customerid-searchads360-searchstrea
+      path: /v0/customers/{customerId}/searchAds360:searchStream
+      operations:
+      - name: searchstream
+        method: POST
+        description: Google Search Ads 360 Reporting Stream campaign data
+        inputParameters:
+        - name: customerId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v0-resourcename
+      path: /v0/{resourceName}
+      operations:
+      - name: getresource
+        method: GET
+        description: Google Search Ads 360 Reporting Get a resource
+        inputParameters:
+        - name: resourceName
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v0-customers-customerid-customcolumns
+      path: /v0/customers/{customerId}/customColumns
+      operations:
+      - name: listcustomcolumns
+        method: GET
+        description: Google Search Ads 360 Reporting List custom columns
+        inputParameters:
+        - name: customerId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: google-search-ads-360-rest
+    description: REST adapter for Google Search Ads 360 Reporting API.
+    resources:
+    - path: /v0/customers/{customerId}/searchAds360:search
+      name: search
+      operations:
+      - method: POST
+        name: search
+        description: Google Search Ads 360 Reporting Search campaign data
+        call: google-search-ads-360.search
+        with:
+          customerId: rest.customerId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v0/customers/{customerId}/searchAds360:searchStream
+      name: searchstream
+      operations:
+      - method: POST
+        name: searchstream
+        description: Google Search Ads 360 Reporting Stream campaign data
+        call: google-search-ads-360.searchstream
+        with:
+          customerId: rest.customerId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v0/{resourceName}
+      name: getresource
+      operations:
+      - method: GET
+        name: getresource
+        description: Google Search Ads 360 Reporting Get a resource
+        call: google-search-ads-360.getresource
+        with:
+          resourceName: rest.resourceName
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v0/customers/{customerId}/customColumns
+      name: listcustomcolumns
+      operations:
+      - method: GET
+        name: listcustomcolumns
+        description: Google Search Ads 360 Reporting List custom columns
+        call: google-search-ads-360.listcustomcolumns
+        with:
+          customerId: rest.customerId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: google-search-ads-360-mcp
+    transport: http
+    description: MCP adapter for Google Search Ads 360 Reporting API for AI agent use.
+    tools:
+    - name: search
+      description: Google Search Ads 360 Reporting Search campaign data
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-search-ads-360.search
+      with:
+        customerId: tools.customerId
+      inputParameters:
+      - name: customerId
+        type: string
+        description: customerId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: searchstream
+      description: Google Search Ads 360 Reporting Stream campaign data
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-search-ads-360.searchstream
+      with:
+        customerId: tools.customerId
+      inputParameters:
+      - name: customerId
+        type: string
+        description: customerId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getresource
+      description: Google Search Ads 360 Reporting Get a resource
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-search-ads-360.getresource
+      with:
+        resourceName: tools.resourceName
+      inputParameters:
+      - name: resourceName
+        type: string
+        description: resourceName
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listcustomcolumns
+      description: Google Search Ads 360 Reporting List custom columns
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-search-ads-360.listcustomcolumns
+      with:
+        customerId: tools.customerId
+      inputParameters:
+      - name: customerId
+        type: string
+        description: customerId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    GOOGLE_SEARCH_ADS_360_TOKEN: GOOGLE_SEARCH_ADS_360_TOKEN
