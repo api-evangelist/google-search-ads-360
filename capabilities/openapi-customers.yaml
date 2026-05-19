@@ -1,0 +1,175 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Search Ads 360 Reporting API — Customers
+  description: 'Google Search Ads 360 Reporting API — Customers. 3 operations. Lead operation: Google Search Ads 360 Reporting
+    List custom columns. Self-contained Naftiko capability covering one Google Search Ads 360 business surface.'
+  tags:
+  - Google Search Ads 360
+  - Customers
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_SEARCH_ADS_360_API_KEY: GOOGLE_SEARCH_ADS_360_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-customers
+    baseUri: https://searchads360.googleapis.com
+    description: Google Search Ads 360 Reporting API — Customers business capability. Self-contained, no shared references.
+    resources:
+    - name: v0-customers-customerId-customColumns
+      path: /v0/customers/{customerId}/customColumns
+      operations:
+      - name: listcustomcolumns
+        method: GET
+        description: Google Search Ads 360 Reporting List custom columns
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: customerId
+          in: path
+          type: string
+          required: true
+    - name: v0-customers-customerId-searchAds360:search
+      path: /v0/customers/{customerId}/searchAds360:search
+      operations:
+      - name: search
+        method: POST
+        description: Google Search Ads 360 Reporting Search campaign data
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: customerId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: v0-customers-customerId-searchAds360:searchStream
+      path: /v0/customers/{customerId}/searchAds360:searchStream
+      operations:
+      - name: searchstream
+        method: POST
+        description: Google Search Ads 360 Reporting Stream campaign data
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: customerId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_SEARCH_ADS_360_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: openapi-customers-rest
+    port: 8080
+    description: REST adapter for Google Search Ads 360 Reporting API — Customers. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/v0/customers/{customerid}/customcolumns
+      name: v0-customers-customerid-customcolumns
+      description: REST surface for v0-customers-customerId-customColumns.
+      operations:
+      - method: GET
+        name: listcustomcolumns
+        description: Google Search Ads 360 Reporting List custom columns
+        call: openapi-customers.listcustomcolumns
+        with:
+          customerId: rest.customerId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v0/customers/{customerid}/searchads360-search
+      name: v0-customers-customerid-searchads360-search
+      description: REST surface for v0-customers-customerId-searchAds360:search.
+      operations:
+      - method: POST
+        name: search
+        description: Google Search Ads 360 Reporting Search campaign data
+        call: openapi-customers.search
+        with:
+          customerId: rest.customerId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/v0/customers/{customerid}/searchads360-searchstream
+      name: v0-customers-customerid-searchads360-searchstream
+      description: REST surface for v0-customers-customerId-searchAds360:searchStream.
+      operations:
+      - method: POST
+        name: searchstream
+        description: Google Search Ads 360 Reporting Stream campaign data
+        call: openapi-customers.searchstream
+        with:
+          customerId: rest.customerId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-customers-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Search Ads 360 Reporting API — Customers. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: google-search-ads-360-reporting
+      description: Google Search Ads 360 Reporting List custom columns
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-customers.listcustomcolumns
+      with:
+        customerId: tools.customerId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-search-ads-360-reporting-2
+      description: Google Search Ads 360 Reporting Search campaign data
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: openapi-customers.search
+      with:
+        customerId: tools.customerId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-search-ads-360-reporting-3
+      description: Google Search Ads 360 Reporting Stream campaign data
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: openapi-customers.searchstream
+      with:
+        customerId: tools.customerId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
