@@ -4,7 +4,7 @@ description: >-
   The Search Ads 360 Reporting API enables automated report downloading and programmatic access to search advertising
   campaign data across multiple search engines. It provides search and streaming methods for querying campaign, ad
   group, keyword, and conversion data using a SQL-like query language.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-search-ads-360/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
