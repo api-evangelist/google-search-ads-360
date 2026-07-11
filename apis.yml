@@ -38,6 +38,12 @@ apis:
       - type: JSONLD
         url: json-ld/json-ld.yml
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-search-ads-360-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-search-ads-360-domain-security.yml
+  - type: Authentication
+    url: authentication/google-search-ads-360-authentication.yml
   - type: OAuthScopes
     url: scopes/google-search-ads-360-scopes.yml
   - type: GitHubOrganization
