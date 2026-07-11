@@ -38,6 +38,8 @@ apis:
       - type: JSONLD
         url: json-ld/json-ld.yml
 common:
+  - type: OAuthScopes
+    url: scopes/google-search-ads-360-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/google
   - type: Portal
