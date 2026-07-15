@@ -38,6 +38,8 @@ apis:
       - type: JSONLD
         url: json-ld/json-ld.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-search-ads-360-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-search-ads-360-vulnerability-disclosure.yml
   - type: DomainSecurity
