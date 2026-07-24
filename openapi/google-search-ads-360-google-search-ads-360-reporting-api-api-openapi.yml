@@ -1,0 +1,50 @@
+openapi: 3.1.0
+info:
+  title: Google Search Ads 360 Reporting Customers Google Search Ads 360 Reporting API API
+  description: The Search Ads 360 Reporting API enables automated report downloading and programmatic access to search advertising campaign data using search and streaming query methods with a SQL-like query language.
+  version: v0
+  contact:
+    name: Google
+    url: https://developers.google.com/search-ads
+  license:
+    name: Google APIs Terms of Service
+    url: https://developers.google.com/terms
+servers:
+- url: https://searchads360.googleapis.com
+  description: Search Ads 360 Reporting API server
+security:
+- oauth2:
+  - https://www.googleapis.com/auth/doubleclicksearch
+tags:
+- name: Google Search Ads 360 Reporting API
+paths:
+  /v0/{resourceName}:
+    get:
+      summary: Google Search Ads 360 Reporting Get a resource
+      description: Returns the requested resource in full detail.
+      operationId: getResource
+      parameters:
+      - name: resourceName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+      tags:
+      - Google Search Ads 360 Reporting API
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/doubleclicksearch: Manage DoubleClick Search data
