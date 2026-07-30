@@ -4,7 +4,20 @@ description: >-
   The Search Ads 360 Reporting API enables automated report downloading and programmatic access to search advertising
   campaign data across multiple search engines. It provides search and streaming methods for querying campaign, ad
   group, keyword, and conversion data using a SQL-like query language.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-search-ads-360.png
 url: https://raw.githubusercontent.com/api-evangelist/google-search-ads-360/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -18,26 +31,51 @@ tags:
   - Search Ads 360
   - Search Advertising
 apis:
-  - name: Google Search Ads 360 Reporting API
-    description: >-
-      The Search Ads 360 Reporting API provides programmatic access to search campaign data through search and streaming
-      query methods, enabling automated reporting across search engines.
-    humanURL: https://developers.google.com/search-ads
-    baseURL: https://searchads360.googleapis.com
-    properties:
-      - type: Documentation
-        url: https://developers.google.com/search-ads/reporting/api/reference
-      - type: OpenAPI
-        url: openapi/openapi.yml
-      - type: Authentication
-        url: https://developers.google.com/search-ads/reporting/quickstart/quickstart-guide
-      - type: GettingStarted
-        url: https://developers.google.com/search-ads/reporting/quickstart/quickstart-guide
-      - type: JSONSchema
-        url: json-schema/json-schema.yml
-      - type: JSONLD
-        url: json-ld/json-ld.yml
+- aid: google-search-ads-360:google-search-ads-360-customers-api
+  name: Google Search Ads 360 Reporting Customers API
+  description: The Customers API from Google Search Ads 360 Reporting — 3 operation(s) for customers.
+  humanURL: https://developers.google.com/search-ads
+  baseURL: https://searchads360.googleapis.com
+  tags:
+  - Customers
+  properties:
+  - type: OpenAPI
+    url: openapi/google-search-ads-360-customers-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/search-ads/reporting/api/reference
+  - type: Authentication
+    url: https://developers.google.com/search-ads/reporting/quickstart/quickstart-guide
+  - type: GettingStarted
+    url: https://developers.google.com/search-ads/reporting/quickstart/quickstart-guide
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.yml
+- aid: google-search-ads-360:google-search-ads-360-google-search-ads-360-reporting-api-api
+  name: Google Search Ads 360 Reporting Google Search Ads 360 Reporting API API
+  description: >-
+    The Google Search Ads 360 Reporting API API from Google Search Ads 360 Reporting — 1 operation(s)
+    for google search ads 360 reporting api.
+  humanURL: https://developers.google.com/search-ads
+  baseURL: https://searchads360.googleapis.com
+  tags:
+  - Google Search Ads 360 Reporting API
+  properties:
+  - type: OpenAPI
+    url: openapi/google-search-ads-360-google-search-ads-360-reporting-api-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/search-ads/reporting/api/reference
+  - type: Authentication
+    url: https://developers.google.com/search-ads/reporting/quickstart/quickstart-guide
+  - type: GettingStarted
+    url: https://developers.google.com/search-ads/reporting/quickstart/quickstart-guide
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.yml
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-search-ads-360-reporting/overview
   - type: AgenticAccess
     url: agentic-access/google-search-ads-360-agentic-access.yml
   - type: VulnerabilityDisclosure
