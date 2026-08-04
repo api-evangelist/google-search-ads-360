@@ -1,0 +1,16 @@
+{
+  "provider": "google-search-ads-360",
+  "sources": [
+    "google-search-ads-360-customers-api-openapi.yml",
+    "google-search-ads-360-google-search-ads-360-reporting-api-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-search-ads-360-customers-api-openapi.yml",
+    "google-search-ads-360-google-search-ads-360-reporting-api-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

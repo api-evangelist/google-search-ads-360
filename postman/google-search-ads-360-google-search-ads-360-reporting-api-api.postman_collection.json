@@ -1,0 +1,151 @@
+{
+  "info": {
+    "_postman_id": "11765932-4635-4cad-971b-ed883f8ca1f3",
+    "name": "Google Search Ads 360 Reporting Customers Google Search Ads 360 Reporting API API",
+    "description": "The Search Ads 360 Reporting API enables automated report downloading and programmatic access to search advertising campaign data using search and streaming query methods with a SQL-like query language.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:50:18.000Z",
+    "updatedAt": "2026-07-28T01:50:18.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-11765932-4635-4cad-971b-ed883f8ca1f3"
+  },
+  "item": [
+    {
+      "name": "v0",
+      "item": [
+        {
+          "name": "{resourceName}",
+          "item": [
+            {
+              "name": "Google Search Ads 360 Reporting Get a resource",
+              "id": "66c92ad8-b2a2-434c-865b-d3bee43c54f8",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v0/:resourceName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v0",
+                    ":resourceName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "6e0ac337-4a48-4cb1-99dc-9c906c8f7d1b",
+                      "key": "resourceName",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Returns the requested resource in full detail."
+              },
+              "response": [
+                {
+                  "id": "eda60408-f36a-474e-8f4e-cb1ad63570ae",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v0/:resourceName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v0",
+                        ":resourceName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "resourceName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T01:50:18.000Z",
+                  "updatedAt": "2026-07-28T01:50:18.000Z",
+                  "uid": "35240-eda60408-f36a-474e-8f4e-cb1ad63570ae"
+                }
+              ],
+              "createdAt": "2026-07-28T01:50:18.000Z",
+              "updatedAt": "2026-07-28T01:50:18.000Z",
+              "uid": "35240-66c92ad8-b2a2-434c-865b-d3bee43c54f8"
+            }
+          ],
+          "id": "ed24674f-b742-4284-a338-5a507fd16092",
+          "createdAt": "2026-07-28T01:50:18.000Z",
+          "updatedAt": "2026-07-28T01:50:18.000Z",
+          "uid": "35240-ed24674f-b742-4284-a338-5a507fd16092"
+        }
+      ],
+      "id": "ea9dd0ae-2c26-470e-b7a5-494953a9b1e2",
+      "createdAt": "2026-07-28T01:50:18.000Z",
+      "updatedAt": "2026-07-28T01:50:18.000Z",
+      "uid": "35240-ea9dd0ae-2c26-470e-b7a5-494953a9b1e2"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/doubleclicksearch",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://searchads360.googleapis.com"
+    }
+  ]
+}
