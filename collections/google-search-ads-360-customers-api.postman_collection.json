@@ -1,0 +1,395 @@
+{
+  "item": [
+    {
+      "id": "617eb43f-08b7-49ff-a43d-f487e87d3dbb",
+      "name": "Customers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "40853397-5518-4f3b-83a5-c4c96fa8301a",
+          "name": "Google Search Ads 360 Reporting Search campaign data",
+          "request": {
+            "name": "Google Search Ads 360 Reporting Search campaign data",
+            "description": {
+              "content": "Returns all rows that match the search query using a SQL-like query language for Search Ads 360 data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v0",
+                "customers",
+                ":customerId",
+                "searchAds360:search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "customerId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"pageToken\": \"<string>\",\n  \"pageSize\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4ec23632-f715-4321-8e04-b873e5d5a2f6",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v0",
+                    "customers",
+                    ":customerId",
+                    "searchAds360:search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "customerId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"pageToken\": \"<string>\",\n  \"pageSize\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"campaign\": {\n        \"resourceName\": \"string\",\n        \"name\": \"string\",\n        \"status\": \"string\",\n        \"id\": \"string\"\n      },\n      \"adGroup\": {\n        \"resourceName\": \"string\",\n        \"name\": \"string\",\n        \"status\": \"string\"\n      },\n      \"metrics\": {\n        \"impressions\": \"string\",\n        \"clicks\": \"string\",\n        \"costMicros\": \"string\",\n        \"conversions\": 2415.2147652791946\n      }\n    },\n    {\n      \"campaign\": {\n        \"resourceName\": \"string\",\n        \"name\": \"string\",\n        \"status\": \"string\",\n        \"id\": \"string\"\n      },\n      \"adGroup\": {\n        \"resourceName\": \"string\",\n        \"name\": \"string\",\n        \"status\": \"string\"\n      },\n      \"metrics\": {\n        \"impressions\": \"string\",\n        \"clicks\": \"string\",\n        \"costMicros\": \"string\",\n        \"conversions\": 7684.289792189963\n      }\n    }\n  ],\n  \"nextPageToken\": \"string\",\n  \"totalResultsCount\": \"string\",\n  \"fieldMask\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bce3934c-2af2-4b8f-8209-7bab28b36c98",
+          "name": "Google Search Ads 360 Reporting Stream campaign data",
+          "request": {
+            "name": "Google Search Ads 360 Reporting Stream campaign data",
+            "description": {
+              "content": "Returns all rows that match the search query as a stream, which is more efficient for large result sets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v0",
+                "customers",
+                ":customerId",
+                "searchAds360:searchStream"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "customerId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"pageToken\": \"<string>\",\n  \"pageSize\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0f5598b9-3eb1-48f8-a15a-1363f3a1dc59",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v0",
+                    "customers",
+                    ":customerId",
+                    "searchAds360:searchStream"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "customerId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"pageToken\": \"<string>\",\n  \"pageSize\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"results\": [\n      {\n        \"campaign\": {\n          \"resourceName\": \"string\",\n          \"name\": \"string\",\n          \"status\": \"string\",\n          \"id\": \"string\"\n        },\n        \"adGroup\": {\n          \"resourceName\": \"string\",\n          \"name\": \"string\",\n          \"status\": \"string\"\n        },\n        \"metrics\": {\n          \"impressions\": \"string\",\n          \"clicks\": \"string\",\n          \"costMicros\": \"string\",\n          \"conversions\": 362.36461860814086\n        }\n      },\n      {\n        \"campaign\": {\n          \"resourceName\": \"string\",\n          \"name\": \"string\",\n          \"status\": \"string\",\n          \"id\": \"string\"\n        },\n        \"adGroup\": {\n          \"resourceName\": \"string\",\n          \"name\": \"string\",\n          \"status\": \"string\"\n        },\n        \"metrics\": {\n          \"impressions\": \"string\",\n          \"clicks\": \"string\",\n          \"costMicros\": \"string\",\n          \"conversions\": 9733.372440119128\n        }\n      }\n    ],\n    \"fieldMask\": \"string\",\n    \"requestId\": \"string\"\n  },\n  {\n    \"results\": [\n      {\n        \"campaign\": {\n          \"resourceName\": \"string\",\n          \"name\": \"string\",\n          \"status\": \"string\",\n          \"id\": \"string\"\n        },\n        \"adGroup\": {\n          \"resourceName\": \"string\",\n          \"name\": \"string\",\n          \"status\": \"string\"\n        },\n        \"metrics\": {\n          \"impressions\": \"string\",\n          \"clicks\": \"string\",\n          \"costMicros\": \"string\",\n          \"conversions\": 3352.214944794386\n        }\n      },\n      {\n        \"campaign\": {\n          \"resourceName\": \"string\",\n          \"name\": \"string\",\n          \"status\": \"string\",\n          \"id\": \"string\"\n        },\n        \"adGroup\": {\n          \"resourceName\": \"string\",\n          \"name\": \"string\",\n          \"status\": \"string\"\n        },\n        \"metrics\": {\n          \"impressions\": \"string\",\n          \"clicks\": \"string\",\n          \"costMicros\": \"string\",\n          \"conversions\": 7510.8969664658125\n        }\n      }\n    ],\n    \"fieldMask\": \"string\",\n    \"requestId\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ed422ed8-8142-4994-a4d5-c8aac58197a4",
+          "name": "Google Search Ads 360 Reporting List custom columns",
+          "request": {
+            "name": "Google Search Ads 360 Reporting List custom columns",
+            "description": {
+              "content": "Lists the custom columns for a specified customer.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v0",
+                "customers",
+                ":customerId",
+                "customColumns"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "customerId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1b0a63a3-03f2-4c9a-9732-588ff52aded7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v0",
+                    "customers",
+                    ":customerId",
+                    "customColumns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "customerId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"customColumns\": [\n    {\n      \"resourceName\": \"string\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"valueType\": \"string\"\n    },\n    {\n      \"resourceName\": \"string\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"valueType\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://searchads360.googleapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/doubleclicksearch"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "db6001a3-00a5-4276-b57a-7f57c7b7dc91",
+    "name": "Google Search Ads 360 Reporting Customers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Search Ads 360 Reporting API enables automated report downloading and programmatic access to search advertising campaign data using search and streaming query methods with a SQL-like query language.\n\nContact Support:\n Name: Google",
+      "type": "text/plain"
+    }
+  }
+}

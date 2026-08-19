@@ -1,0 +1,92 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Search Ads 360 Reporting Customers API",
+    "version": "v0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Customers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Search Ads 360 Reporting Search campaign data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://searchads360.googleapis.com/v0/customers/:customerId/searchAds360:search",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns all rows that match the search query using a SQL-like query language for Search Ads 360 data."
+        },
+        {
+          "info": {
+            "name": "Google Search Ads 360 Reporting Stream campaign data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://searchads360.googleapis.com/v0/customers/:customerId/searchAds360:searchStream",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns all rows that match the search query as a stream, which is more efficient for large result sets."
+        },
+        {
+          "info": {
+            "name": "Google Search Ads 360 Reporting List custom columns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://searchads360.googleapis.com/v0/customers/:customerId/customColumns",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists the custom columns for a specified customer."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
