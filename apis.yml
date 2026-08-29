@@ -4,6 +4,18 @@ description: >-
   The Search Ads 360 Reporting API enables automated report downloading and programmatic access to search advertising
   campaign data across multiple search engines. It provides search and streaming methods for querying campaign, ad
   group, keyword, and conversion data using a SQL-like query language.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
