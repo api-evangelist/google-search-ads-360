@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Google Search Ads 360 Reporting Customers Google Search Ads 360 Reporting API API
+  title: Google Search Ads 360 Reporting Customers Google Search Ads 360 Reporting API
   description: The Search Ads 360 Reporting API enables automated report downloading and programmatic access to search advertising campaign data using search and streaming query methods with a SQL-like query language.
   version: v0
   contact:

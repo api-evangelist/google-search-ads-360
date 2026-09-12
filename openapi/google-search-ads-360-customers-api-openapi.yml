@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Google Search Ads 360 Reporting Customers API
   description: The Search Ads 360 Reporting API enables automated report downloading and programmatic access to search advertising campaign data using search and streaming query methods with a SQL-like query language.
@@ -92,19 +92,6 @@ paths:
       - Customers
 components:
   schemas:
-    CustomColumn:
-      type: object
-      properties:
-        resourceName:
-          type: string
-        id:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-        valueType:
-          type: string
     SearchResponse:
       type: object
       properties:
@@ -117,6 +104,30 @@ components:
         totalResultsCount:
           type: string
         fieldMask:
+          type: string
+    SearchStreamResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchAds360Row'
+        fieldMask:
+          type: string
+        requestId:
+          type: string
+    CustomColumn:
+      type: object
+      properties:
+        resourceName:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        valueType:
           type: string
     SearchRequest:
       type: object
@@ -173,17 +184,6 @@ components:
               type: string
             conversions:
               type: number
-    SearchStreamResponse:
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/SearchAds360Row'
-        fieldMask:
-          type: string
-        requestId:
-          type: string
   securitySchemes:
     oauth2:
       type: oauth2
