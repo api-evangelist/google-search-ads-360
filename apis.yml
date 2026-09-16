@@ -1,9 +1,8 @@
 aid: google-search-ads-360
 name: Google Search Ads 360 Reporting
-description: >-
-  The Search Ads 360 Reporting API enables automated report downloading and programmatic access to search advertising
-  campaign data across multiple search engines. It provides search and streaming methods for querying campaign, ad
-  group, keyword, and conversion data using a SQL-like query language.
+description: The Search Ads 360 Reporting API enables automated report downloading and programmatic access
+  to search advertising campaign data across multiple search engines. It provides search and streaming
+  methods for querying campaign, ad group, keyword, and conversion data using a SQL-like query language.
 deliveryModel:
   model: saas
   open_source: false
@@ -32,16 +31,16 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-search-ads-360.png
 url: https://raw.githubusercontent.com/api-evangelist/google-search-ads-360/refs/heads/main/apis.yml
 created: '2026-03-13'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 type: Index
 tags:
-  - Campaign Management
-  - Conversions
-  - Keywords
-  - Reporting
-  - Search Ads 360
-  - Search Advertising
+- Campaign Management
+- Conversions
+- Keywords
+- Reporting
+- Search Ads 360
+- Search Advertising
 apis:
 - aid: google-search-ads-360:google-search-ads-360-customers-api
   name: Google Search Ads 360 Reporting Customers API
@@ -64,9 +63,8 @@ apis:
   - type: JSONLD
     url: json-ld/json-ld.yml
 - aid: google-search-ads-360:google-search-ads-360-google-search-ads-360-reporting-api-api
-  name: Google Search Ads 360 Reporting Google Search Ads 360 Reporting API API
-  description: >-
-    The Google Search Ads 360 Reporting API API from Google Search Ads 360 Reporting — 1 operation(s)
+  name: Google Search Ads 360 Reporting Google Search Ads 360 Reporting API
+  description: The Google Search Ads 360 Reporting API API from Google Search Ads 360 Reporting — 1 operation(s)
     for google search ads 360 reporting api.
   humanURL: https://developers.google.com/search-ads
   baseURL: https://searchads360.googleapis.com
@@ -86,44 +84,44 @@ apis:
   - type: JSONLD
     url: json-ld/json-ld.yml
 common:
-  - type: Website
-    url: https://www.google.com/
-  - type: PostmanWorkspace
-    url: https://www.postman.com/kinlaneapi/google-search-ads-360-reporting/overview
-  - type: AgenticAccess
-    url: agentic-access/google-search-ads-360-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/google-search-ads-360-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/google-search-ads-360-domain-security.yml
-  - type: Authentication
-    url: authentication/google-search-ads-360-authentication.yml
-  - type: OAuthScopes
-    url: scopes/google-search-ads-360-scopes.yml
-  - type: GitHubOrganization
-    url: https://github.com/google
-  - type: Portal
-    url: https://developers.google.com/search-ads
-  - type: GettingStarted
-    url: https://developers.google.com/search-ads/reporting/quickstart/quickstart-guide
-  - type: Documentation
-    url: https://developers.google.com/search-ads
-  - type: Authentication
-    url: https://developers.google.com/search-ads/reporting/quickstart/quickstart-guide
-  - type: Pricing
-    url: https://marketingplatform.google.com/about/search-ads-360/
-  - type: TermsOfService
-    url: https://developers.google.com/terms
-  - type: PrivacyPolicy
-    url: https://policies.google.com/privacy
-  - type: StatusPage
-    url: https://status.cloud.google.com/
-  - type: Support
-    url: https://developers.google.com/search-ads/reporting/support
-  - type: JSONLD
-    url: json-ld/json-ld.yml
+- type: Website
+  url: https://www.google.com/
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/google-search-ads-360-reporting/overview
+- type: AgenticAccess
+  url: agentic-access/google-search-ads-360-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/google-search-ads-360-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/google-search-ads-360-domain-security.yml
+- type: Authentication
+  url: authentication/google-search-ads-360-authentication.yml
+- type: OAuthScopes
+  url: scopes/google-search-ads-360-scopes.yml
+- type: GitHubOrganization
+  url: https://github.com/google
+- type: Portal
+  url: https://developers.google.com/search-ads
+- type: GettingStarted
+  url: https://developers.google.com/search-ads/reporting/quickstart/quickstart-guide
+- type: Documentation
+  url: https://developers.google.com/search-ads
+- type: Authentication
+  url: https://developers.google.com/search-ads/reporting/quickstart/quickstart-guide
+- type: Pricing
+  url: https://marketingplatform.google.com/about/search-ads-360/
+- type: TermsOfService
+  url: https://developers.google.com/terms
+- type: PrivacyPolicy
+  url: https://policies.google.com/privacy
+- type: StatusPage
+  url: https://status.cloud.google.com/
+- type: Support
+  url: https://developers.google.com/search-ads/reporting/support
+- type: JSONLD
+  url: json-ld/json-ld.yml
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
 x-parent: google
 x-relationship: product
