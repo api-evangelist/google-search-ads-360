@@ -92,30 +92,6 @@ paths:
       - Customers
 components:
   schemas:
-    SearchResponse:
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/SearchAds360Row'
-        nextPageToken:
-          type: string
-        totalResultsCount:
-          type: string
-        fieldMask:
-          type: string
-    SearchStreamResponse:
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/SearchAds360Row'
-        fieldMask:
-          type: string
-        requestId:
-          type: string
     CustomColumn:
       type: object
       properties:
@@ -128,6 +104,19 @@ components:
         description:
           type: string
         valueType:
+          type: string
+    SearchResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchAds360Row'
+        nextPageToken:
+          type: string
+        totalResultsCount:
+          type: string
+        fieldMask:
           type: string
     SearchRequest:
       type: object
@@ -184,6 +173,17 @@ components:
               type: string
             conversions:
               type: number
+    SearchStreamResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchAds360Row'
+        fieldMask:
+          type: string
+        requestId:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2

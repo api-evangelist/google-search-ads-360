@@ -1,8 +1,7 @@
 {
   "provider": "google-search-ads-360",
   "sources": [
-    "google-search-ads-360-customers-api-openapi.yml",
-    "google-search-ads-360-google-search-ads-360-reporting-api-api-openapi.yml"
+    "_original/openapi.yml"
   ],
   "outputs": [
     "google-search-ads-360-customers-api-openapi.yml",
@@ -12,9 +11,14 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "google-search-ads-360-customers-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-search-ads-360-google-search-ads-360-reporting-api-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "openapi.yml: tagged paths GET /v0/{resourceName} -> Google Search Ads 360 Reporting API",
+    "openapi.yml: declared missing tag: Google Search Ads 360 Reporting API",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "google-search-ads-360-customers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-search-ads-360-google-search-ads-360-reporting-api-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
