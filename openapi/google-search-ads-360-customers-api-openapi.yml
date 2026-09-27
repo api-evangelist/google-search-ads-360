@@ -92,19 +92,24 @@ paths:
       - Customers
 components:
   schemas:
-    CustomColumn:
+    SearchStreamResponse:
       type: object
       properties:
-        resourceName:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchAds360Row'
+        fieldMask:
           type: string
-        id:
+        requestId:
           type: string
-        name:
-          type: string
-        description:
-          type: string
-        valueType:
-          type: string
+    ListCustomColumnsResponse:
+      type: object
+      properties:
+        customColumns:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomColumn'
     SearchResponse:
       type: object
       properties:
@@ -132,13 +137,6 @@ components:
           description: Number of elements to retrieve in a single page.
       required:
       - query
-    ListCustomColumnsResponse:
-      type: object
-      properties:
-        customColumns:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomColumn'
     SearchAds360Row:
       type: object
       properties:
@@ -173,16 +171,18 @@ components:
               type: string
             conversions:
               type: number
-    SearchStreamResponse:
+    CustomColumn:
       type: object
       properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/SearchAds360Row'
-        fieldMask:
+        resourceName:
           type: string
-        requestId:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        valueType:
           type: string
   securitySchemes:
     oauth2:
