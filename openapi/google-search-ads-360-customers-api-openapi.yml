@@ -92,37 +92,6 @@ paths:
       - Customers
 components:
   schemas:
-    SearchStreamResponse:
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/SearchAds360Row'
-        fieldMask:
-          type: string
-        requestId:
-          type: string
-    ListCustomColumnsResponse:
-      type: object
-      properties:
-        customColumns:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomColumn'
-    SearchResponse:
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/SearchAds360Row'
-        nextPageToken:
-          type: string
-        totalResultsCount:
-          type: string
-        fieldMask:
-          type: string
     SearchRequest:
       type: object
       properties:
@@ -137,6 +106,37 @@ components:
           description: Number of elements to retrieve in a single page.
       required:
       - query
+    CustomColumn:
+      type: object
+      properties:
+        resourceName:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        valueType:
+          type: string
+    ListCustomColumnsResponse:
+      type: object
+      properties:
+        customColumns:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomColumn'
+    SearchStreamResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchAds360Row'
+        fieldMask:
+          type: string
+        requestId:
+          type: string
     SearchAds360Row:
       type: object
       properties:
@@ -171,18 +171,18 @@ components:
               type: string
             conversions:
               type: number
-    CustomColumn:
+    SearchResponse:
       type: object
       properties:
-        resourceName:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchAds360Row'
+        nextPageToken:
           type: string
-        id:
+        totalResultsCount:
           type: string
-        name:
-          type: string
-        description:
-          type: string
-        valueType:
+        fieldMask:
           type: string
   securitySchemes:
     oauth2:
