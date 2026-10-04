@@ -91,6 +91,9 @@ apis:
   - type: JSONLD
     url: json-ld/json-ld.yml
 common:
+- type: CapabilityMap
+  url: capabilities/google-search-ads-360-capability-edges.yml
+  name: Google Search Ads 360 Reporting Business Capability Map
 - type: Website
   url: https://www.google.com/
 - type: PostmanWorkspace
