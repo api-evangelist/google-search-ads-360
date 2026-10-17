@@ -103,19 +103,13 @@ components:
           type: string
         requestId:
           type: string
-    SearchResponse:
+    ListCustomColumnsResponse:
       type: object
       properties:
-        results:
+        customColumns:
           type: array
           items:
-            $ref: '#/components/schemas/SearchAds360Row'
-        nextPageToken:
-          type: string
-        totalResultsCount:
-          type: string
-        fieldMask:
-          type: string
+            $ref: '#/components/schemas/CustomColumn'
     CustomColumn:
       type: object
       properties:
@@ -129,27 +123,6 @@ components:
           type: string
         valueType:
           type: string
-    SearchRequest:
-      type: object
-      properties:
-        query:
-          type: string
-          description: The query string using Search Ads 360 Query Language.
-        pageToken:
-          type: string
-          description: Token for paginating through large result sets.
-        pageSize:
-          type: integer
-          description: Number of elements to retrieve in a single page.
-      required:
-      - query
-    ListCustomColumnsResponse:
-      type: object
-      properties:
-        customColumns:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomColumn'
     SearchAds360Row:
       type: object
       properties:
@@ -184,6 +157,33 @@ components:
               type: string
             conversions:
               type: number
+    SearchResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/SearchAds360Row'
+        nextPageToken:
+          type: string
+        totalResultsCount:
+          type: string
+        fieldMask:
+          type: string
+    SearchRequest:
+      type: object
+      properties:
+        query:
+          type: string
+          description: The query string using Search Ads 360 Query Language.
+        pageToken:
+          type: string
+          description: Token for paginating through large result sets.
+        pageSize:
+          type: integer
+          description: Number of elements to retrieve in a single page.
+      required:
+      - query
   securitySchemes:
     oauth2:
       type: oauth2
