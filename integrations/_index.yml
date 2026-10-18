@@ -15,3 +15,58 @@
   relationship: connector-coverage
   status: not-a-workflow
   arazzo: null
+- slug: google-search-ads-360-fivetran
+  label: Fivetran
+  partner: fivetran
+  partner_name: Fivetran
+  type: marketplace
+  marketplace: fivetran-connectors
+  channel: elt-connector
+  evidence: https://fivetran.com/docs/connectors/applications/google-search-ads-360
+  source: edge
+  relationship: ipaas-bridge
+  contract_reference:
+    register: Fivetran connectors (fivetran.com/docs/connectors, docs-sitemap.xml + Partner-Built program)
+    spec_file: null
+    role: elt-connector:fivetran
+    registered_name: Google Search Ads 360
+    matched_domain: google.com
+    matched_by: domain+name-among-holders
+    detected_by: sweep-data-integration.py
+    detected: '2026-10-18'
+    signal_note: one edge per (provider, platform); connectors, streams, packages and usage are context, never read
+    connector_paths:
+    - connectors/applications/google-search-ads-360
+    vendor_link: https://marketingplatform.google.com/about/search-ads-360/
+    builder: Fivetran
+  status: pending-generation
+  arazzo: null
+- slug: google-search-ads-360-meltano
+  label: Meltano
+  partner: meltano
+  partner_name: Meltano
+  type: marketplace
+  marketplace: meltano-hub
+  channel: elt-connector
+  evidence: https://hub.meltano.com/extractors/tap-search-ads--uptilab2
+  source: edge
+  relationship: ipaas-bridge
+  contract_reference:
+    register: Meltano Hub (github.com/meltano/hub _data/meltano extractors + loaders)
+    spec_file: null
+    role: elt-connector:meltano-hub
+    registered_name: Google Search Ads 360
+    matched_domain: google.com
+    matched_by: domain+name-among-holders
+    detected_by: sweep-data-integration.py
+    detected: '2026-10-18'
+    signal_note: one edge per (provider, platform); connectors, streams, packages and usage are context, never read
+    plugins:
+    - tap-search-ads--uptilab2
+    maintenance_status:
+    - unknown
+    quality:
+    - silver
+    builder: 'community (Meltano Hub variant maintainers: uptilab2)'
+  status: pending-partner-spec
+  arazzo: null
