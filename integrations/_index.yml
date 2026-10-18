@@ -39,7 +39,7 @@
     - connectors/applications/google-search-ads-360
     vendor_link: https://marketingplatform.google.com/about/search-ads-360/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: google-search-ads-360-meltano
   label: Meltano
@@ -68,5 +68,5 @@
     quality:
     - silver
     builder: 'community (Meltano Hub variant maintainers: uptilab2)'
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
